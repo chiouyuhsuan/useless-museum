@@ -221,6 +221,17 @@ a.fn-item:hover .fn-arrow{color:var(--red); transform:translate(3px,-3px);}
 .modal-send{font-size:12px; letter-spacing:0.15em; text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; padding:14px 24px; color:var(--paper); background:var(--ink); transition:background .2s;}
 .modal-send:hover{background:var(--red);}
 
+/* BACK TO TOP */
+.totop{position:fixed; right:24px; bottom:24px; z-index:65; width:46px; height:46px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--ink); color:var(--paper); border:1px solid var(--ink);
+  opacity:0; pointer-events:none; transform:translateY(12px);
+  transition:opacity .3s, transform .3s, background .2s;}
+.totop.show{opacity:1; pointer-events:auto; transform:translateY(0);}
+.totop:hover{background:var(--red); border-color:var(--red);}
+.totop svg{width:18px; height:18px;}
+@media(min-width:768px){ .totop{right:36px; bottom:36px;} }
+
 /* TOAST */
 .toast{position:fixed; bottom:32px; left:50%; transform:translateX(-50%) translateY(20px); z-index:70; padding:14px 24px; background:var(--ink); color:var(--paper); font-size:12px; letter-spacing:0.02em; opacity:0; pointer-events:none; transition:opacity .3s,transform .3s;}
 .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}

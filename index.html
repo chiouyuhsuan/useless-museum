@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Useless. — a one-person museum of projects that never got their moment</title>
 <meta name="description" content="A one-person museum for things that are useless. 10,000 ideas. 100 attempts. 0 unicorns. Projects that quietly work, waiting for someone to notice." />
+<meta name="google-site-verification" content="MYq0yzwps03jFdGotB3OZwV_66gnTtj2KEARQ8NL6-0" />
 <link rel="canonical" href="https://useless-museum.pages.dev/" />
 <meta property="og:site_name" content="Useless." />
 <meta property="og:title" content="Useless." />
@@ -17,6 +18,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBBKFRRSNZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MBBKFRRSNZ');
+</script>
 </head>
 <body>
 <header>
@@ -150,6 +158,9 @@
   </div>
 </div>
 <div class="toast" id="toast"></div>
+<button class="totop" id="totop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
 <script>
 
 var modal=document.getElementById('modal');
@@ -160,6 +171,12 @@ document.getElementById('modal-x').addEventListener('click',function(){modal.cla
 modal.addEventListener('click',function(e){ if(e.target.id==='modal') modal.classList.remove('open'); });
 var toastTimer;
 function toast(m){var el=document.getElementById('toast');el.textContent=m;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.classList.remove('show');},2600);}
+/* back to top */
+var totop=document.getElementById('totop');
+if(totop){
+  window.addEventListener('scroll',function(){ if(window.scrollY>400) totop.classList.add('show'); else totop.classList.remove('show'); });
+  totop.addEventListener('click',function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+}
 
 /* waste-time easter egg */
 var W_OPENERS=["You wasted","You just spent","You gave away","You donated","You sacrificed","You threw away","You invested","You burned","You surrendered","You misplaced"];
