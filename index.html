@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Useless. — a one-person museum of projects that never got their moment</title>
+<meta name="description" content="A one-person museum for things that are useless. 10,000 ideas. 100 attempts. 0 unicorns. Projects that quietly work, waiting for someone to notice." />
+<link rel="canonical" href="https://useless-museum.pages.dev/" />
+<meta property="og:site_name" content="Useless." />
+<meta property="og:title" content="Useless." />
+<meta property="og:description" content="A one-person museum for things that are useless. 10,000 ideas. 100 attempts. 0 unicorns. Projects that quietly work, waiting for someone to notice." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://useless-museum.pages.dev/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#FAFAFA" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="wrap hbar">
+    <a href="index.html" class="logo hoverred">Useless<span class="dot">.</span></a>
+    <nav class="navlinks">
+      <a href="index.html#works" class="navlink hoverred">Works</a>
+      <a href="index.html#archive" class="navlink hoverred hideS">Archive</a>
+      <button class="navlink hoverred" data-submit>Submit a failure</button>
+    </nav>
+  </div>
+</header>
+<main>
+  <span id="top"></span>
+  <section class="hero wrap">
+    <span class="tag">A one-person museum</span>
+    <h1>For things that are<br>useless. <span class="grey">(But who knows.)</span></h1>
+    <p class="sub">10,000 ideas. 100 attempts. 0 unicorns. None of these went big — they just quietly work, waiting for someone to notice.</p>
+    <p class="viewcount"><span class="vc-num" id="vc-num">&mdash;</span><span class="vc-label" id="vc-label">visitors have wandered in and left again</span></p>
+  </section>
+
+  <section class="wrap"><div class="feat fade"><div class="featgrid"><a class="featimg" href="luckycat.html"><div class="tex"></div><div class="big">L</div></a><div>
+        <span class="tag">Web toy · Cats</span>
+        <h3 class="serif"><a href="luckycat.html" class="hoverred">LuckyCat</a></h3>
+        <p class="blurb">Upload a photo of your cat and it picks your lottery numbers. Then it joins a global leaderboard of the world's luckiest cats.</p>
+        <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+          <span class="statuschip">0 Winners</span>
+          <a href="luckycat.html" class="readpm hoverred">Read post-mortem &#8599;</a>
+        </div>
+      </div></div></div><div class="feat fade"><div class="featgrid"><div>
+        <span class="tag">Data · Feelings</span>
+        <h3 class="serif"><a href="moodworld.html" class="hoverred">Mood World</a></h3>
+        <p class="blurb">A living map of how the internet feels right now. Colours shift with the collective mood. Nobody asked for it.</p>
+        <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+          <span class="statuschip">0 Feelings logged</span>
+          <a href="moodworld.html" class="readpm hoverred">Read post-mortem &#8599;</a>
+        </div>
+      </div><a class="featimg" href="moodworld.html"><div class="tex"></div><div class="big">M</div></a></div></div><div class="feat fade"><div class="featgrid"><a class="featimg" href="nomadroutes.html"><div class="tex"></div><div class="big">N</div></a><div>
+        <span class="tag">Data · Travel</span>
+        <h3 class="serif"><a href="nomadroutes.html" class="hoverred">NomadRoutes</a></h3>
+        <p class="blurb">Real monthly budgets and internet speeds for 118 cities. Built to help people get found online. Google never found it.</p>
+        <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+          <span class="statuschip">0 Traffic</span>
+          <a href="nomadroutes.html" class="readpm hoverred">Read post-mortem &#8599;</a>
+        </div>
+      </div></div></div></section>
+
+  <section class="works wrap" id="works">
+    <div class="works-head"><h2 class="serif">The Collection</h2><span class="tag">everything, one grid</span></div>
+    <p class="works-note">Every tile here is a real, working thing you can go and try. As more get built, the most-clicked ones float to the top.</p>
+    <div class="grid">
+    <a class="cell live" href="luckycat.html">
+      <span class="cell-init">L</span>
+      <span class="cell-arrow" aria-hidden="true">&#8599;</span>
+      <p class="cell-t serif">LuckyCat</p>
+      <span class="cell-k">Web toy · Cats</span>
+    </a>
+    <a class="cell live" href="moodworld.html">
+      <span class="cell-init">M</span>
+      <span class="cell-arrow" aria-hidden="true">&#8599;</span>
+      <p class="cell-t serif">Mood World</p>
+      <span class="cell-k">Data · Feelings</span>
+    </a>
+    <a class="cell live" href="nomadroutes.html">
+      <span class="cell-init">N</span>
+      <span class="cell-arrow" aria-hidden="true">&#8599;</span>
+      <p class="cell-t serif">NomadRoutes</p>
+      <span class="cell-k">Data · Travel</span>
+    </a>
+    <div class="cell soon">
+      <span class="cell-init">+</span>
+      <p class="cell-t serif">More coming</p>
+      <span class="cell-k">Live soon</span>
+    </div></div>
+  </section>
+
+  <section class="archive wrap" id="archive">
+    <div class="archive-head"><h2 class="serif">The Archive</h2><span class="tag">on hold &middot; resting</span></div>
+    <p class="archive-note">Not live, not playable. Just ideas and half-things — the ones that stopped somewhere before the finish line.</p>
+    <div class="drawers">
+    <div class="drawer">
+      <span class="n">01</span>
+      <h3 class="serif">The 60% Drawer</h3>
+      <p>A shelf of things that stopped at exactly sixty percent. Not dead. Resting.</p>
+    </div>
+    <div class="drawer">
+      <span class="n">02</span>
+      <h3 class="serif">Napkin Division</h3>
+      <p>Ideas that only ever existed on the back of a receipt. Fully formed at 2am, unreadable by morning.</p>
+    </div>
+    <div class="drawer">
+      <span class="n">03</span>
+      <h3 class="serif">The Almost-Launched</h3>
+      <p>Finished, tested, screenshotted for the announcement I never posted.</p>
+    </div></div>
+  </section>
+
+  <section class="waste">
+    <div class="waste-inner wrap">
+      <span class="kick">Nothing better to do?</span>
+      <div><button class="waste-btn" id="waste-btn">Waste a little time</button></div>
+      <p class="waste-out" id="waste-out">Go on. Click it. It does nothing useful, obviously.</p>
+      <p class="waste-count" id="waste-count"></p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-inner wrap">
+      <span class="tag">your turn</span>
+      <h2 class="serif">Got something gloriously useless?</h2>
+      <button class="cta-btn hoverred" data-submit>Send me your useless thing &#8599;</button>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <a href="index.html" class="logo" style="font-size:15px;">Useless<span class="dot">.</span></a>
+    <span class="fnote">Made with more hope than sense · Still building</span>
+  </div>
+</footer>
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <button class="modal-x" id="modal-x" aria-label="Close">&#10005;</button>
+    <span class="tag">your turn</span>
+    <h3 class="serif">Throw it at me.</h3>
+    <p>A dead side project. A tool only you use. An idea that never left the napkin. I'll put it on the shelf.</p>
+    <a href="mailto:hello@example.com?subject=I%20made%20something%20useless" class="modal-send">Send me your useless thing &#8599;</a>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+
+var modal=document.getElementById('modal');
+document.addEventListener('click',function(e){
+  if(e.target.closest('[data-submit]')){ modal.classList.add('open'); }
+});
+document.getElementById('modal-x').addEventListener('click',function(){modal.classList.remove('open');});
+modal.addEventListener('click',function(e){ if(e.target.id==='modal') modal.classList.remove('open'); });
+var toastTimer;
+function toast(m){var el=document.getElementById('toast');el.textContent=m;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.classList.remove('show');},2600);}
+
+/* waste-time easter egg */
+var W_OPENERS=["You wasted","You just spent","You gave away","You donated","You sacrificed","You threw away","You invested","You burned","You surrendered","You misplaced"];
+var W_AMOUNTS=["3 seconds","a moment","precisely one heartbeat","some of your finite time","a small piece of today","4.2 seconds","an unrecoverable instant","a click's worth of life","the exact time it takes a cat to blink","a breath you'll never get back"];
+var W_TAILS=["Beautifully.","On purpose, apparently.","And for what.","No refunds.","A bold choice.","Somewhere, a productivity coach felt a chill.","The button remains unmoved.","This changes nothing.","Efficient? No. Honest? Also no.","And yet you'll do it again.","A cat somewhere just judged you.","Congratulations, nothing happened.","The void says hi.","Peak performance.","This is what you're like."];
+var W_STANDALONE=["This button does nothing. You already knew that.","Still nothing. Impressive commitment.","Somewhere a spreadsheet is crying.","Achievement unlocked: absolutely none.","You have reached the end of the internet. There is no prize.","A pigeon has been notified of your click.","Loading meaning… failed. Please try being productive.","That click has been added to your permanent record of small mistakes.","你又滑了一下。什麼都沒發生。","Certified: you have too much free time."];
+var wasteCount=0,lastWaste="";
+function wasteMessage(){var m;do{if(Math.random()<0.2){m=W_STANDALONE[Math.floor(Math.random()*W_STANDALONE.length)];}else{m=W_OPENERS[Math.floor(Math.random()*W_OPENERS.length)]+" "+W_AMOUNTS[Math.floor(Math.random()*W_AMOUNTS.length)]+". "+W_TAILS[Math.floor(Math.random()*W_TAILS.length)];}}while(m===lastWaste);lastWaste=m;return m;}
+document.getElementById('waste-btn').addEventListener('click',function(){
+  var out=document.getElementById('waste-out');out.style.opacity='0';
+  setTimeout(function(){out.textContent=wasteMessage();out.style.opacity='1';wasteCount++;
+    document.getElementById('waste-count').textContent=wasteCount+' second'+(wasteCount===1?'':'s')+' of your life, gone';},130);
+});
+/* real visitor counter */
+var COUNTER_BASE="https://api.counterapi.dev/v1/useless-museum/homepage";
+function animateCount(el,target){var dur=900,start=performance.now();function tick(now){var t=Math.min((now-start)/dur,1);var e=1-Math.pow(1-t,3);el.textContent=Math.round(target*e).toLocaleString();if(t<1)requestAnimationFrame(tick);else el.textContent=target.toLocaleString();}requestAnimationFrame(tick);}
+(function(){var numEl=document.getElementById('vc-num');var counted=sessionStorage.getItem('uselessCounted');
+  fetch(COUNTER_BASE+(counted?'':'/up')).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(d){
+    if(!d||typeof d.count!=='number')throw 0; if(!counted)sessionStorage.setItem('uselessCounted','1'); animateCount(numEl,d.count);
+  }).catch(function(){numEl.textContent='0';document.getElementById('vc-label').textContent='visitors (the counter is also useless right now)';});
+})();
+/* scroll reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{rootMargin:'-60px'});
+document.querySelectorAll('.feat').forEach(function(el){io.observe(el);});
+</script>
+</body></html>
