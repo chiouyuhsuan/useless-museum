@@ -194,6 +194,10 @@ a.fn-item:hover .fn-arrow{color:var(--red); transform:translate(3px,-3px);}
 .art-title{font-family:'Playfair Display',serif; font-weight:700; font-size:clamp(2rem,5vw,3.3rem); line-height:1.1; letter-spacing:-0.02em; margin:16px 0 24px;}
 .art-standfirst{font-size:1.15rem; line-height:1.6; color:#4A4A4A; margin:0 0 28px;}
 .art-byline{font-size:12px; letter-spacing:0.05em; color:var(--muted); padding-bottom:40px; border-bottom:1px solid var(--line); margin:0 0 48px;}
+.art-tldr{border-left:3px solid var(--ink); background:#F4F4F2; padding:20px 24px; margin:0 0 44px;}
+.art-tldr-label{display:block; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;}
+.art-tldr p{margin:0; font-size:1rem; line-height:1.7; color:#2E2E2E;}
+.art-tldr strong{color:var(--ink);}
 .art-body p{font-size:1.06rem; line-height:1.85; color:#2E2E2E; margin:0 0 28px;}
 .art-body h2{font-family:'Playfair Display',serif; font-weight:600; font-size:clamp(1.4rem,3vw,1.9rem); letter-spacing:-0.01em; margin:56px 0 20px; line-height:1.2;}
 .art-body h2 .hn{color:var(--red); font-style:italic; margin-right:14px; font-size:.85em;}

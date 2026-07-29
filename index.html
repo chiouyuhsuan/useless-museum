@@ -194,10 +194,25 @@ document.getElementById('waste-btn').addEventListener('click',function(){
 /* real visitor counter */
 var COUNTER_BASE="https://api.counterapi.dev/v1/useless-museum/homepage";
 function animateCount(el,target){var dur=900,start=performance.now();function tick(now){var t=Math.min((now-start)/dur,1);var e=1-Math.pow(1-t,3);el.textContent=Math.round(target*e).toLocaleString();if(t<1)requestAnimationFrame(tick);else el.textContent=target.toLocaleString();}requestAnimationFrame(tick);}
-(function(){var numEl=document.getElementById('vc-num');var counted=sessionStorage.getItem('uselessCounted');
-  fetch(COUNTER_BASE+(counted?'':'/up')).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(d){
-    if(!d||typeof d.count!=='number')throw 0; if(!counted)sessionStorage.setItem('uselessCounted','1'); animateCount(numEl,d.count);
-  }).catch(function(){numEl.textContent='0';document.getElementById('vc-label').textContent='visitors (the counter is also useless right now)';});
+(function(){
+  var numEl=document.getElementById('vc-num');
+  var labelEl=document.getElementById('vc-label');
+  var counted=sessionStorage.getItem('uselessCounted');
+  var attempt=0;
+  function hit(){
+    attempt++;
+    // first attempt increments (/up) unless already counted this session; retries are read-only
+    var url = COUNTER_BASE + ((!counted && attempt===1) ? '/up' : '');
+    fetch(url).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(d){
+      if(!d||typeof d.count!=='number') throw 0;
+      if(!counted) sessionStorage.setItem('uselessCounted','1');
+      animateCount(numEl,d.count);
+    }).catch(function(){
+      if(attempt<3){ setTimeout(hit, 1200); }   // retry a couple of times before giving up
+      else { numEl.textContent='—'; labelEl.textContent='visitors, give or take (the counter naps sometimes)'; }
+    });
+  }
+  hit();
 })();
 /* scroll reveal */
 var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{rootMargin:'-60px'});
