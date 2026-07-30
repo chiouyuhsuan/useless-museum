@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scope creep didn't kill my side project. Three quiet anxieties did. · Useless.</title>
+<meta name="description" content="Why do we never finish side projects? Scope creep gets the blame, but it's a symptom. The real cause: three quiet anxieties, each disguised as good judgement." />
+<meta name="google-site-verification" content="MYq0yzwps03jFdGotB3OZwV_66gnTtj2KEARQ8NL6-0" />
+<link rel="canonical" href="https://useless-museum.pages.dev/luckycat-scope-creep-killed-it.html" />
+<meta property="og:site_name" content="Useless." />
+<meta property="og:title" content="Scope creep didn't kill my side project. Three quiet anxieties did." />
+<meta property="og:description" content="Why do we never finish side projects? Scope creep gets the blame, but it's a symptom. The real cause: three quiet anxieties, each disguised as good judgement." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://useless-museum.pages.dev/luckycat-scope-creep-killed-it.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#FAFAFA" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBBKFRRSNZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MBBKFRRSNZ');
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap hbar">
+    <a href="index.html" class="logo hoverred">Useless<span class="dot">.</span></a>
+    <nav class="navlinks">
+      <a href="index.html#works" class="navlink hoverred">Works</a>
+      <a href="index.html#archive" class="navlink hoverred hideS">Archive</a>
+      <button class="navlink hoverred" data-submit>Submit a failure</button>
+    </nav>
+  </div>
+</header>
+<article>
+  <div class="art-wrap">
+    <div class="art-crumbs">
+      <a href="index.html" class="art-home hoverred">Useless<span class="dot">.</span></a>
+      <a href="luckycat.html" class="art-back hoverred">&#8592; back to LuckyCat</a>
+    </div>
+    <span class="tag">field notes · LuckyCat · exhibit no.02</span>
+    <h1 class="art-title serif">Scope creep didn't kill my side project. Three quiet anxieties did.</h1>
+    <p class="art-standfirst">The features that stalled LuckyCat weren't the ones I couldn't build — the hard engineering shipped. They were the ones whose fixes I already knew. This is a case study of that gap: the three quiet anxieties that talk a maker out of shipping, each one disguised as good judgement.</p>
+    <p class="art-byline">By The Curator · On the gap between knowing and doing · ~6 min read &middot; <time datetime="2026-07-29">Last updated 29 July 2026</time></p>
+    <div class="art-tldr"><span class="art-tldr-label">In short</span><p>Scope creep gets blamed for dead side projects; it's really a symptom. Building LuckyCat solo, the hard engineering shipped — what stalled were features whose fixes I already knew. Three anxieties, each disguised as good judgement, did the stalling: <strong>(1)</strong> onboarding was already guest-first (play freely; log in only to save your cat and join the leaderboard) — the real hesitation was whether to ask for one more thing, an email/push channel, just to notify the rare winner; <strong>(2)</strong> the stuck features weren't hard, just unfinished-looking — 'ship it ugly' is the known cure, and the hardest one to swallow; <strong>(3)</strong> thinking about how it would pay for itself quietly added features when I had no users yet. The theme isn't a lack of answers. It's the gap between knowing them and acting on them.</p></div>
+    <div class="art-body">
+<p>Let me name the interesting part up front, because it's the whole reason I'm writing this. The features that stalled LuckyCat weren't the ones I <em>couldn't</em> build. The hard engineering — the automated pipeline, the dynamic prize logic — I finished. What stalled were features whose textbook solutions I already understood. So the puzzle this post is about isn't "how do you solve cold-start onboarding?" It's the more honest, more human one: <strong>why does a maker who knows the right move still hesitate to make it?</strong></p>
+<p>Because this isn't a how-to. It's a case study of the gap between knowing and doing. Every post-mortem of a dead side project reaches for the same two words — <strong>scope creep</strong> — and I reached for them too, about LuckyCat, the lucky-cat app that asks your cat to pick lottery numbers. But scope creep is the symptom. The real cause, for this solo maker, was three quiet anxieties — each one dressed up as sound judgement, each one talking me out of shipping at exactly the moment I should have. Here they are, in the order they found me.</p>
+<h2><span class="hn">01</span>Anxiety one: how much more should I ask of a user who's already happy?</h2>
+<p>Let me start with what I got right, because it frames the anxiety. The classic <strong>cold-start problem</strong> — how do you get value out of an app before it has any users? — I actually solved. Onboarding was <strong>guest-first by design.</strong> You could show up, upload a cat, get your lucky numbers and see the whole thing with zero friction — no wall, no sign-up. Logging in was optional, and it bought you something concrete: your cat's record was saved, and it could join the global leaderboard. Play freely, or sign in to make it stick. That part I'm happy with.</p>
+<p>So the trap wasn't "will a sign-up scare people off" — I'd already solved that. The trap was one layer deeper, and it sat around the <strong>one feature I never shipped: automatic win notifications.</strong> Wiring up the notification itself is routine. The catch is that to <em>proactively</em> tell someone their cat had won, I needed more than an optional login — I needed a reliable channel to reach them: an email they'd actually confirm, or a push permission.</p>
+<blockquote>The question wasn't "should there be a sign-up." It was "how much more do I ask of someone who's already delighted and already onboarded — for a payoff that only matters on the rare day they win?"</blockquote>
+<p>That's a genuinely reasonable thing to weigh: every extra field you request costs a little goodwill, and a win-notification only pays off occasionally. The mature answer is probably to make it a tiny, opt-in ask at the moment of delight — "want us to email you if your cat hits?" — and I knew that. What I kept circling was whether it was worth building at all before I had the users to justify it. I never landed the decision, so the channel never got built — and not deciding is, of course, its own decision. That's the hesitation I'd resolve faster today.</p>
+<h2><span class="hn">02</span>Anxiety two: the thing that stopped me was taste, not difficulty</h2>
+<p>Here's the pattern I only saw in hindsight. The features I actually <em>finished</em> were the hard, invisible, back-end ones. The GAS pipeline that pulled each draw and checked every ticket automatically? Done. The genuinely fiddly part — modelling the dynamic prize tiers, where the 1st / 2nd / 3rd-prize amounts change every draw and the number of winners is never fixed — that was the real engineering challenge, and I solved it.</p>
+<p>The features that <strong>stalled</strong> were almost never the difficult ones. They stalled at design. At the moment I looked at what I'd built and thought: <em>this isn't good enough. This isn't what I pictured. This won't make anyone want to come back.</em></p>
+<blockquote>I wasn't blocked by "I can't build this." I was blocked by "I can't stand how this looks." Those are completely different problems, and only one of them feels like a valid reason to stop.</blockquote>
+<p>The fix here is the most famous advice in software: <strong>ship it ugly.</strong> "If you're not embarrassed by your first version, you shipped too late." I believe it, I've quoted it to others — and I still let a high bar for polish outweigh it. That's the honest tension: caring about craft is a strength right up until it becomes the reason nothing ships. Knowing where that line is, and crossing it on purpose, is the discipline I was still building.</p>
+<p>This is the anxiety nobody admits to, because it sounds like vanity. It isn't quite. It's that a solo maker is also the art director, and the art director's taste outruns their hands. I could feel the gap between how well the thing worked and how unfinished it looked — and the AI tools I leaned on couldn't close it either. That gap is quietly demoralising in a way that's hard to explain until you've lived inside it. You stop not because you failed, but because you can't bear to be <em>seen</em> at sixty percent.</p>
+<h2><span class="hn">03</span>Anxiety three: money was in the room from day one</h2>
+<p>The third one was underneath everything, from the very first sketch. I built on free tiers on purpose — but I always knew that a real version, with paid image recognition and the ever-growing dataset needed to actually build a cat-physiognomy model, <strong>would cost money.</strong> Servers, APIs, storage. It had to eventually pay for itself, or it couldn't exist.</p>
+<p>So a monetisation instinct was there before there was a product. My favourite version of it was gentle and on-theme: the luckiest cat could be treated a little like a temple deity — visitors leave a small offering, incense money, out of a kind of playful reverence. A tip jar with a soul.</p>
+<p>And again — I knew better. The textbook answer is boring and correct: <strong>you do not monetise a product with zero users.</strong> Revenue is a problem you earn the right to have. I was solving it while my entire user base was four cats belonging to me and a friend. It was, by any reasonable measure, wildly premature.</p>
+<p>But here's what the money-anxiety actually <em>did</em> to the build. Every time I thought about sustainability, a new feature appeared on the pile — notifications, the prize-money leaderboard, the weekly "luckiest cat" email, the tip jar, the paid video. <strong>None of them were random. Each was a reasonable answer to "how does this survive?"</strong> That's what makes this one so dangerous: it doesn't feel like bloat. It feels like responsibility. It feels like being a grown-up about your project. And it grows the scope every single time, no matter how many times you've read that you shouldn't let it.</p>
+<h2><span class="hn">04</span>So why do we never finish side projects, really?</h2>
+<p>Put the three together and you get the real mechanism behind why so many side projects never ship. Scope creep is just the shape the damage takes. The engine underneath is that <strong>at every point where you should finish, one of these three anxieties hands you a reasonable-sounding excuse to keep going instead:</strong></p>
+<p>Don't ship the sign-up — you'll scare people off. Don't ship that screen — it looks unfinished. Don't stop adding features — how will it ever pay for itself? Each is individually sensible. Together, they are a machine for never being done.</p>
+<blockquote>A side project rarely dies of a hard problem. It dies of a hundred reasonable reasons to not call it finished.</blockquote>
+<h2><span class="hn">05</span>Why I'm not going to give you three tips</h2>
+<p>This is the part where a normal post lists the fixes: name the anxiety, ship it ugly, don't monetise early. You already know them. I already knew them. Knowing them is not the missing piece — which is exactly why this is written as a case study rather than a checklist.</p>
+<p>If there's anything here worth taking, it's smaller and less flattering than a tip. It's just this: <strong>the excuse that stops you will always sound like good judgement.</strong> "Don't scare off users," "don't ship something ugly," "make sure it can pay for itself" — none of these announce themselves as fear. They arrive dressed as maturity. So the only defence I've found isn't discipline; it's suspicion. When the reason to keep polishing sounds especially wise, that's exactly when to check whether it's one of the three wearing a nicer coat.</p>
+<p>Did that insight save LuckyCat? No. It's still sitting at sixty percent. I'm telling you I can see the trap clearly, from the inside, standing in it. That's what makes it a museum piece and not a TED talk.</p>
+<p>The cats, for what it's worth, don't care how any of it looks. They're still up there on a leaderboard nobody visits — patiently lucky, waiting for a version of me that could just leave well enough alone.</p>
+<div class="art-divider">— ✦ —</div>
+</div>
+    <div class="art-foot">
+      <p class="art-nextnote"><strong>More field notes coming.</strong> The museum keeps a shelf for things that stopped at exactly sixty percent — and I have quite a few.</p>
+      <div class="art-actions">
+        <a class="art-cta" href="luckycat.html">&#8592; Back to LuckyCat &middot; go stamp it</a>
+        <a class="art-cta primary alt" href="nomadroutes-ai-experiment.html">Next field note &#8594;<span class="art-cta-sub">I let an AI build an SEO site by itself. Here's exactly where it hit the wall.</span></a>
+      </div>
+    </div>
+  </div>
+</article>
+<footer>
+  <div class="wrap foot">
+    <a href="index.html" class="logo" style="font-size:15px;">Useless<span class="dot">.</span></a>
+    <span class="fnote">Made with more hope than sense · Still building</span>
+  </div>
+</footer>
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <button class="modal-x" id="modal-x" aria-label="Close">&#10005;</button>
+    <span class="tag">your turn</span>
+    <h3 class="serif">Throw it at me.</h3>
+    <p>A dead side project. A tool only you use. An idea that never left the napkin. I'll put it on the shelf.</p>
+    <a href="mailto:hello@example.com?subject=I%20made%20something%20useless" class="modal-send">Send me your useless thing &#8599;</a>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<button class="totop" id="totop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+<script>
+var modal=document.getElementById('modal');
+document.addEventListener('click',function(e){
+  if(e.target.closest('[data-submit]')){ modal.classList.add('open'); }
+});
+document.getElementById('modal-x').addEventListener('click',function(){modal.classList.remove('open');});
+modal.addEventListener('click',function(e){ if(e.target.id==='modal') modal.classList.remove('open'); });
+var toastTimer;
+function toast(m){var el=document.getElementById('toast');el.textContent=m;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.classList.remove('show');},2600);}
+/* back to top */
+var totop=document.getElementById('totop');
+if(totop){
+  window.addEventListener('scroll',function(){ if(window.scrollY>400) totop.classList.add('show'); else totop.classList.remove('show'); });
+  totop.addEventListener('click',function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+}
+</script>
+</body></html>
